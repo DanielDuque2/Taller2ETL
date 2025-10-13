@@ -1,5 +1,5 @@
 pymongo
 pandas
-jupyter
+notebook
 matplotlib
 seaborn

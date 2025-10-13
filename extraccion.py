@@ -1,6 +1,8 @@
 import pandas as pd
 from pymongo import MongoClient
 import logging
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 logging.basicConfig(
     filename="extraccion.log",
