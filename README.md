@@ -43,7 +43,8 @@ Este proyecto implementa un pipeline ETL (Extracción, Transformación y Carga) 
 
 - **Todos los integrantes:** Gestión de logs y documentación ([`Logs`](src/logs.py), README)
 
-## Ejemplo de ejecución del ETL  ---- Este mismo se encuentra en el archivo pruebaEjecucion.py que se encuentra en el src. Se deben modificar los nombres para que correspondan con el nombre de la base datos y las colecciones.
+## Ejemplo de ejecución del ETL
+###      Este mismo se encuentra en el archivo pruebaEjecucion.py que se encuentra en el src. Se deben modificar los nombres para que correspondan con el nombre de la base datos y las colecciones.
 
 ```python
 from extraccion import Extraccion
