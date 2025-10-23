@@ -1,0 +1,4 @@
+2025-10-22 22:14:17 - [INFO] - extraccion - Iniciando ejecución del módulo: extraccion (log: ..\logs\log_20251022_2214_extraccion.txt)
+2025-10-22 22:14:17 - [INFO] - extraccion - Conexión exitosa a la BD: AirBnbDB
+2025-10-22 22:14:56 - [INFO] - extraccion - Iniciando ejecución del módulo: extraccion (log: ..\logs\log_20251022_2214_extraccion.txt)
+2025-10-22 22:14:56 - [INFO] - extraccion - Conexión exitosa a la BD: AirBnbDB
