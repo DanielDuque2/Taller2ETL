@@ -99,12 +99,22 @@ class Transformacion:
                 self.log.info(f"Expansión de amenities realizada (Top 10)")
             except Exception as e:
                 self.log.error(f"Error expandiendo amenities: {e}")
+    
+    def convertir_datos_anomalos(self):
+        try:
+            for col in self.df.columns:
+                if self.df[col].apply(lambda x: isinstance(x, (list, dict, set, tuple, object))).any():
+                    self.df[col] = self.df[col].astype(str)
+                    self.log.info(f"Columna '{col}' convertida a string para almacenar datos")
+        except Exception as e:
+            self.log.error(f"Error normalizando datos: {e}")
 
     def transformar(self):
         self.log.info("═" * 50)
         self.log.info("INICIANDO TRANSFORMACIONES")
         self.log.info("═" * 50)
         
+        self.convertir_datos_anomalos()
         self.limpiar_nulos_duplicados()
         self.normalizar_precios()
         self.convertir_fechas()

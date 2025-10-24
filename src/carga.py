@@ -36,12 +36,17 @@ class Carga:
             error_msg = f"Error al cargar en SQLite: {e}"
             self.log.error(error_msg)
 
-    def cargar_a_excel(self, nombre_archivo: str = "datos_airbnb.xlsx"):
+    def cargar_a_excel(self, nombre_archivo: str = "datos_airbnb{numero}.xlsx"):
         try:
-            ruta = Path(nombre_archivo)
-            self.df.to_excel(ruta, index=False)
+            cantidadRegistrosHoja = 1048570
+            cantidadHojas = (len(self.df) // cantidadRegistrosHoja) + 1
+            for i in range(cantidadHojas):
+                inicio = i * cantidadRegistrosHoja
+                fin = inicio + cantidadRegistrosHoja
+                hoja_df = self.df.iloc[inicio:fin]
+                hoja_df.to_excel(Path(nombre_archivo.replace("{numero}", str(i+1))), index=False)
             
-            mensaje = f"Archivo Excel creado: {ruta} ({self.registros} registros)"
+            mensaje = f"Archivo Excel creado: {nombre_archivo.replace("{numero}", "")} ({self.registros} registros)"
             self.reportes.append(mensaje)
             self.log.info(mensaje)
         except Exception as e:
